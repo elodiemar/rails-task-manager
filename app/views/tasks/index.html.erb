@@ -1,0 +1,14 @@
+
+<fieldset>
+    <legend> What you need to do :</legend>
+    <% @tasks.each do |task|%>
+    <div>
+      <input type="checkbox" id="<%= task.title%>" name="<%= task.title%>"
+             checked>
+      <label for="<%= task.title%>"> <%= link_to task.title , task_path(task.id)%></label>
+    </div>
+    <% end %>
+
+<p> <%= link_to "add task",  tasks_new_path%></p>
+
+</fieldset>
